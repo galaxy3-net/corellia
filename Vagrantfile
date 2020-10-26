@@ -3,16 +3,19 @@
 
 Vagrant.configure("2") do |config|
   config.vm.box = "galaxy3/corellia"
-  config.vm.box_version = "2020.10.19-1707"
+  config.vm.box_version = "2020.10.25-1550"
   config.vm.hostname = "corellia"
-  config.vm.guest = "windows"
-  config.vm.box_version = "2020.10.25-1653"
+  config.vm.guest = :windows
+  config.winrm.username = "SysAdmin"
+  config.winrm.password = "cybersecurity"
+  config.vm.network "private_network", ip: "10.55.55.15"
+  config.vm.communicator = :winrm
 
   #config.vm.network "private_network", ip: "10.55.55.9"
 
   #config.vm.synced_folder	"../../",	"/vagrant", owner: "1001", group: "1001"
-  #config.vm.synced_folder "~/repos/uci", "/repos", owner: "1001", group: "1001", mount_options: ["fmode=777", "dmode=777"], create: true
-  #config.vm.synced_folder "../../Downloads", "/Downloads", owner: "1001", group: "1001", mount_options: ["fmode=777", "dmode=777"], create: true
+  config.vm.synced_folder "~/repos/uci", "/repos", owner: "1001", group: "1001", mount_options: ["fmode=777", "dmode=777"], create: true
+  config.vm.synced_folder "../../Downloads", "/Downloads", owner: "1001", group: "1001", mount_options: ["fmode=777", "dmode=777"], create: true
   #config.vm.synced_folder "../../log/nakadia", "/var/log/", owner: "1001", group: "1001", mount_options: ["fmode=777", "dmode=777"], create: true
 
   #config.vm.network "forwarded_port", guest: 8000, host: 8000, host_ip: "127.0.0.1", auto_correct: true
