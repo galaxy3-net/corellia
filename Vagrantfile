@@ -6,6 +6,7 @@ Vagrant.configure("2") do |config|
   config.vm.box_version = "2020.10.19-1707"
   config.vm.hostname = "corellia"
   config.vm.guest = "windows"
+  config.vm.box_version = "2020.10.25-1653"
 
   #config.vm.network "private_network", ip: "10.55.55.9"
 
