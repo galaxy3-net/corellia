@@ -4,7 +4,7 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "galaxy3/corellia"
   config.vm.box_version = "2020.10.25-1550"
-  config.vm.hostname = "corellia"
+  config.vm.hostname = "corellia (Win10Ent)"
   config.vm.guest = :windows
   config.winrm.username = "SysAdmin"
   config.winrm.password = "cybersecurity"
