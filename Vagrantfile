@@ -15,7 +15,8 @@ Vagrant.configure("2") do |config|
 
   #config.vm.synced_folder	"../../",	"/vagrant", owner: "1001", group: "1001"
   config.vm.synced_folder "~/repos/uci", "/repos", owner: "1001", group: "1001", mount_options: ["fmode=777", "dmode=777"], create: true
-  config.vm.synced_folder "../../Downloads", "/Downloads", owner: "1001", group: "1001", mount_options: ["fmode=777", "dmode=777"], create: true
+  config.vm.synced_folder "../../Downloads", "/Downloads", create: true
+#  config.vm.synced_folder "../../Downloads", "/Downloads", owner: "1001", group: "1001", mount_options: ["fmode=777", "dmode=777"], create: true
   #config.vm.synced_folder "../../log/nakadia", "/var/log/", owner: "1001", group: "1001", mount_options: ["fmode=777", "dmode=777"], create: true
 
   #config.vm.network "forwarded_port", guest: 8000, host: 8000, host_ip: "127.0.0.1", auto_correct: true
@@ -30,10 +31,9 @@ Vagrant.configure("2") do |config|
     # vb.memory = "2048" # 2Gb
     # vb.memory = "4096" # 4Gb
     vb.name = "Corellia (Win10Ent)"
-    vb.gui = true
+    vb.gui = false
     vb.cpus = "4"
     vb.memory = "4096"
-    vb.customize ["modifyvm", :id, "--cpuexecutioncap", "50"]
 
     vb.customize ['modifyvm', :id, '--vrde', 'on']
     vb.customize ['modifyvm', :id, '--vrdeport', '5002']
