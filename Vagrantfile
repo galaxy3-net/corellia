@@ -6,8 +6,8 @@ Vagrant.configure("2") do |config|
   config.vm.box_version = "2020.10.25-1550"
   config.vm.hostname = "corellia"
   config.vm.guest = :windows
-  config.winrm.username = "SysAdmin"
-  config.winrm.password = "cybersecurity"
+  config.winrm.username = "vagrant"
+  config.winrm.password = "vagrant"
   config.vm.network "private_network", ip: "10.55.55.15"
   config.vm.communicator = :winrm
 
