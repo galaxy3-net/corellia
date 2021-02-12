@@ -31,7 +31,8 @@ Vagrant.configure("2") do |config|
     # vb.memory = "1024" # 1Gb
     # vb.memory = "2048" # 2Gb
     # vb.memory = "4096" # 4Gb
-    vb.name = "#{ENV['boxname']} (Win10Ent)"
+    #vb.name = "#{ENV['boxname']} (Win10Ent)"
+    vb.name = "Corellia"
     vb.gui = false
     vb.cpus = "4"
     vb.memory = "4096"
