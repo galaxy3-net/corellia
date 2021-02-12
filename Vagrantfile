@@ -30,7 +30,7 @@ Vagrant.configure("2") do |config|
     # vb.memory = "1024" # 1Gb
     # vb.memory = "2048" # 2Gb
     # vb.memory = "4096" # 4Gb
-    vb.name = "Corellia (Win10Ent)"
+    vb.name = "#{ENV['boxname']} (Win10Ent)"
     vb.gui = false
     vb.cpus = "4"
     vb.memory = "4096"
@@ -38,6 +38,7 @@ Vagrant.configure("2") do |config|
     vb.customize ['modifyvm', :id, '--vrde', 'on']
     vb.customize ['modifyvm', :id, '--vrdeport', '5002']
     vb.customize ['modifyvm', :id, '--graphicscontroller', 'vboxsvga']
+    vb.customize ["modifyvm", :id, "--description", File.read("Description")]
     #vb.customize ['modifyvm', :id, '--firmware', 'efi64']
     #vb.customize ['modifyvm', :id, '--nictype1', 'virtio']
   end
