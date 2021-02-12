@@ -3,7 +3,7 @@
 
 Vagrant.configure("2") do |config|
   config.vm.box = "galaxy3/corellia"
-  config.vm.box_version = "2021.02.11-2321"
+  config.vm.box_version = "2021.02.12-1205"
   config.vm.hostname = "corellia"
   config.vm.guest = :windows
   config.winrm.username = "vagrant"
