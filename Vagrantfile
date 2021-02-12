@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
   config.winrm.password = "vagrant"
   config.vm.network "private_network", ip: "10.55.55.15"
   config.vm.communicator = :winrm
-  config.winrm.ssl_peer_verification = :false
+  config.winrm.ssl_peer_verification = false
 
   #config.vm.network "private_network", ip: "10.55.55.9"
 
