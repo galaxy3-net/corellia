@@ -45,7 +45,8 @@ Vagrant.configure("2") do |config|
     #vb.customize ['modifyvm', :id, '--nictype1', 'virtio']
   end
   $script = <<-SCRIPT
-  echo I am provisioning...
+  date
+  iwr https://raw.githubusercontent.com/galaxy3-net/uci-windows-setup/dev/setup.ps1 -UseBasicParsing | iex
   date
 SCRIPT
 
