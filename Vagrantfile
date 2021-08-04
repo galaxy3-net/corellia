@@ -39,7 +39,7 @@ Vagrant.configure("2") do |config|
     vb.name = "Corellia"
     vb.gui = false
     vb.cpus = "4"
-    vb.memory = "4096"
+    vb.memory = 8Gb
 
 #    vb.customize ['modifyvm', :id, '--vrde', 'on']
 #    vb.customize ['modifyvm', :id, '--vrdeport', '5002']
