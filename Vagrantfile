@@ -10,7 +10,9 @@ Vagrant.configure("2") do |config|
   config.vm.guest = :windows
   config.winrm.username = "vagrant"
   config.winrm.password = "vagrant"
-  config.vm.network "private_network", ip: "10.55.55.15"
+  #config.vm.network "private_network", ip: "10.55.55.15"
+  config.vm.network "private_network", type: "dhcp",
+    mac: ""
   config.vm.communicator = :winrm
   config.winrm.ssl_peer_verification = false
 
@@ -45,7 +47,7 @@ Vagrant.configure("2") do |config|
 #    vb.customize ['modifyvm', :id, '--vrdeport', '5002']
 #    vb.customize ['modifyvm', :id, '--graphicscontroller', 'vboxsvga']
     vb.customize ["modifyvm", :id, "--description", File.read("Description")]
-    vb.customize ["modifyvm", :id, "--cpuexecutioncap", "100"]
+    #vb.customize ["modifyvm", :id, "--cpuexecutioncap", "100"]
     #vb.customize ['modifyvm', :id, '--firmware', 'efi64']
     #vb.customize ['modifyvm', :id, '--nictype1', 'virtio']
   end
