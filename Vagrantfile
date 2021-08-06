@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
   config.winrm.password = "vagrant"
   #config.vm.network "private_network", ip: "10.55.55.15"
   config.vm.network "private_network", type: "dhcp",
-    mac: "080027373709",
+    mac: "08002737370F",
     virtualbox__intnet: "g3main"
 
   config.vm.communicator = :winrm
