@@ -12,7 +12,9 @@ Vagrant.configure("2") do |config|
   config.winrm.password = "vagrant"
   #config.vm.network "private_network", ip: "10.55.55.15"
   config.vm.network "private_network", type: "dhcp",
-    mac: ""
+    mac: "080027373709",
+    virtualbox__intnet: "g3main"
+
   config.vm.communicator = :winrm
   config.winrm.ssl_peer_verification = false
 
