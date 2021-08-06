@@ -57,6 +57,8 @@ Vagrant.configure("2") do |config|
   date
   iwr https://raw.githubusercontent.com/galaxy3-net/uci-windows-setup/dev/setup.ps1 -UseBasicParsing | iex
   date
+  Set-ItemProperty -Path Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\sppsvc -Name Start -Value 4 -Type DWord
+  date
 SCRIPT
 
   config.vm.provision "shell", inline: $script
