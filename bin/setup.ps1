@@ -11,4 +11,6 @@ $jobs = foreach ($script in $scriptList) {
 
 $jobs | Wait-Job | Receive-Job
 
+Set-ItemProperty -Path Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\sppsvc -Name Start -Value 4 -Type DWord
+
 #  https://stackoverflow.com/questions/57932053/calling-other-powershell-scripts-within-a-powershell-script
