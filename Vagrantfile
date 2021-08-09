@@ -59,6 +59,7 @@ Vagrant.configure("2") do |config|
   date
   Set-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\sppsvc' -Name Start -Value 4 -Type DWord
   Set-ScreenResolution -Width 1920 -Height 1080
+  Set-MpPreference -DisableRealtimeMonitoring $true
   date
 SCRIPT
 
