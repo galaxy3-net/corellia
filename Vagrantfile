@@ -67,7 +67,11 @@ Vagrant.configure("2") do |config|
 SCRIPT
 
   config.vm.provision "shell", inline: $script
-  config.vm.provision :reload
+  config.vm.provision :shell do |shell|
+      shell.privileged = true
+      shell.inline = 'echo rebooting'
+      shell.reboot = true
+  end
 #   config.vm.provision "shell", inline: <<-SHELL
 #     tr -d '\r' < /vagrant/functions/ready >/usr/local/bin/ready && chmod 0700 /usr/local/bin/ready
 #     /usr/local/bin/ready
