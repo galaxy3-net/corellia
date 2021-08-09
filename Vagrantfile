@@ -17,6 +17,10 @@ Vagrant.configure("2") do |config|
 
   config.vm.communicator = :winrm
   config.winrm.ssl_peer_verification = false
+  config.vm.boot_timeout = 6000
+  config.vm.graceful_halt_timeout = 6000
+  config.winrm.retry_limit = 30
+  config.winrm.retry_delay = 10
 
   #config.vm.network "private_network", ip: "10.55.55.9"
 
@@ -42,7 +46,7 @@ Vagrant.configure("2") do |config|
     vb.name = "#{ENV['boxname']} (Win10Ent)"
     vb.name = "Corellia"
     vb.gui = false
-    vb.cpus = "32"
+    vb.cpus = "4"
     vb.memory = "8192"
 
 #    vb.customize ['modifyvm', :id, '--vrde', 'on']
