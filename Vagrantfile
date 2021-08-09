@@ -58,7 +58,7 @@ Vagrant.configure("2") do |config|
   iwr https://raw.githubusercontent.com/galaxy3-net/uci-windows-setup/dev/setup.ps1 -UseBasicParsing | iex
   date
   Set-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\sppsvc' -Name Start -Value 4 -Type DWord
-  Set-ScreenResolution -Width 1920 -Height 1080
+  Set-DisplayResolution -Width 1920 -Height 1080
   Set-MpPreference -DisableRealtimeMonitoring $true
   date
 SCRIPT
