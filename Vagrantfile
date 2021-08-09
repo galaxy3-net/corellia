@@ -42,7 +42,7 @@ Vagrant.configure("2") do |config|
     vb.name = "#{ENV['boxname']} (Win10Ent)"
     vb.name = "Corellia"
     vb.gui = false
-    vb.cpus = "4"
+    vb.cpus = "32"
     vb.memory = "8192"
 
 #    vb.customize ['modifyvm', :id, '--vrde', 'on']
