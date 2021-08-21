@@ -64,6 +64,9 @@ Vagrant.configure("2") do |config|
   date
   Set-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\sppsvc' -Name Start -Value 4 -Type DWord
   Set-MpPreference -DisableRealtimeMonitoring $true
+  sc stop WinDefend
+  REG ADD "hklm\software\policies\microsoft\windows defender" /v DisableAntiSpyware /t REG_DWORD /d 1 /f
+  Set-MpPreference -DisableIntrusionPreventionSystem $true -DisableIOAVProtection $true -DisableRealtimeMonitoring $true -DisableScriptScanning $true -EnableControlledFolderAccess Disabled -EnableNetworkProtection AuditMode -Force -MAPSReporting Disabled -SubmitSamplesConsent NeverSend
   date
 SCRIPT
 
